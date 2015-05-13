@@ -1,0 +1,15 @@
+# Clocks
+NET "Clk" TNM_NET = CLK_100M;
+TIMESPEC TS_CLK_100M = PERIOD "CLK_100M" 10 ns;
+#-------------------------------------------------------------------------------
+
+# Ignore internal timing paths
+# NET "Delay_Reset1/Reset" TIG;
+#-------------------------------------------------------------------------------
+
+# Pins
+NET "Reset" LOC = E16 | IOSTANDARD = "LVCMOS33" | TIG;
+NET "Clk"   LOC = E3  | IOSTANDARD = "LVCMOS33";
+
+NET "Rx" LOC = C4 | IOSTANDARD = "LVCMOS33" | TIG;
+NET "Tx" LOC = D4 | IOSTANDARD = "LVCMOS33" | TIG;

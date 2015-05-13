@@ -1,0 +1,520 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml Vadar.twx Vadar.ncd -o Vadar.twr Vadar.pcf -ucf Vadar.ucf
+
+Design file:              Vadar.ncd
+Physical constraint file: Vadar.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_CLK_100M = PERIOD TIMEGRP "CLK_100M" 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 192 paths analyzed, 103 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   2.032ns.
+--------------------------------------------------------------------------------
+
+Paths for end point UART1/UART_Tx1/Busy (SLICE_X50Y127.A2), 6 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     7.968ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_4 (FF)
+  Destination:          UART1/UART_Tx1/Busy (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.907ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.090ns (1.002 - 1.092)
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_4 to UART1/UART_Tx1/Busy
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y128.AQ     Tcko                  0.341   UART1/UART_Tx1/Count<5>
+                                                       UART1/UART_Tx1/Count_4
+    SLICE_X53Y127.C1     net (fanout=8)        0.662   UART1/UART_Tx1/Count<4>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X50Y127.A2     net (fanout=4)        0.779   UART1/UART_Tx1/n0000
+    SLICE_X50Y127.CLK    Tas                   0.028   UART1/UART_Tx1/Busy
+                                                       UART1/UART_Tx1/Busy_rstpot
+                                                       UART1/UART_Tx1/Busy
+    -------------------------------------------------  ---------------------------
+    Total                                      1.907ns (0.466ns logic, 1.441ns route)
+                                                       (24.4% logic, 75.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.000ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_0 (FF)
+  Destination:          UART1/UART_Tx1/Busy (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.875ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.090ns (1.002 - 1.092)
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_0 to UART1/UART_Tx1/Busy
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y128.AQ     Tcko                  0.341   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_0
+    SLICE_X53Y127.C2     net (fanout=8)        0.630   UART1/UART_Tx1/Count<0>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X50Y127.A2     net (fanout=4)        0.779   UART1/UART_Tx1/n0000
+    SLICE_X50Y127.CLK    Tas                   0.028   UART1/UART_Tx1/Busy
+                                                       UART1/UART_Tx1/Busy_rstpot
+                                                       UART1/UART_Tx1/Busy
+    -------------------------------------------------  ---------------------------
+    Total                                      1.875ns (0.466ns logic, 1.409ns route)
+                                                       (24.9% logic, 75.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.112ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_2 (FF)
+  Destination:          UART1/UART_Tx1/Busy (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.763ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.090ns (1.002 - 1.092)
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_2 to UART1/UART_Tx1/Busy
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y128.CQ     Tcko                  0.341   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_2
+    SLICE_X53Y127.C3     net (fanout=8)        0.518   UART1/UART_Tx1/Count<2>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X50Y127.A2     net (fanout=4)        0.779   UART1/UART_Tx1/n0000
+    SLICE_X50Y127.CLK    Tas                   0.028   UART1/UART_Tx1/Busy
+                                                       UART1/UART_Tx1/Busy_rstpot
+                                                       UART1/UART_Tx1/Busy
+    -------------------------------------------------  ---------------------------
+    Total                                      1.763ns (0.466ns logic, 1.297ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UART1/UART_Tx1/Count_0 (SLICE_X53Y128.CE), 9 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.070ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_4 (FF)
+  Destination:          UART1/UART_Tx1/Count_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.873ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.022ns (0.097 - 0.119)
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_4 to UART1/UART_Tx1/Count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y128.AQ     Tcko                  0.341   UART1/UART_Tx1/Count<5>
+                                                       UART1/UART_Tx1/Count_4
+    SLICE_X53Y127.C1     net (fanout=8)        0.662   UART1/UART_Tx1/Count<4>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X53Y127.D4     net (fanout=4)        0.302   UART1/UART_Tx1/n0000
+    SLICE_X53Y127.D      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/_n0110_inv1
+    SLICE_X53Y128.CE     net (fanout=2)        0.224   UART1/UART_Tx1/_n0110_inv
+    SLICE_X53Y128.CLK    Tceck                 0.150   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_0
+    -------------------------------------------------  ---------------------------
+    Total                                      1.873ns (0.685ns logic, 1.188ns route)
+                                                       (36.6% logic, 63.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.124ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_0 (FF)
+  Destination:          UART1/UART_Tx1/Count_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.841ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_0 to UART1/UART_Tx1/Count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y128.AQ     Tcko                  0.341   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_0
+    SLICE_X53Y127.C2     net (fanout=8)        0.630   UART1/UART_Tx1/Count<0>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X53Y127.D4     net (fanout=4)        0.302   UART1/UART_Tx1/n0000
+    SLICE_X53Y127.D      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/_n0110_inv1
+    SLICE_X53Y128.CE     net (fanout=2)        0.224   UART1/UART_Tx1/_n0110_inv
+    SLICE_X53Y128.CLK    Tceck                 0.150   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_0
+    -------------------------------------------------  ---------------------------
+    Total                                      1.841ns (0.685ns logic, 1.156ns route)
+                                                       (37.2% logic, 62.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.236ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_2 (FF)
+  Destination:          UART1/UART_Tx1/Count_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.729ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_2 to UART1/UART_Tx1/Count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y128.CQ     Tcko                  0.341   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_2
+    SLICE_X53Y127.C3     net (fanout=8)        0.518   UART1/UART_Tx1/Count<2>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X53Y127.D4     net (fanout=4)        0.302   UART1/UART_Tx1/n0000
+    SLICE_X53Y127.D      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/_n0110_inv1
+    SLICE_X53Y128.CE     net (fanout=2)        0.224   UART1/UART_Tx1/_n0110_inv
+    SLICE_X53Y128.CLK    Tceck                 0.150   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_0
+    -------------------------------------------------  ---------------------------
+    Total                                      1.729ns (0.685ns logic, 1.044ns route)
+                                                       (39.6% logic, 60.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UART1/UART_Tx1/Count_1 (SLICE_X53Y128.CE), 9 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.070ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_4 (FF)
+  Destination:          UART1/UART_Tx1/Count_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.873ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.022ns (0.097 - 0.119)
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_4 to UART1/UART_Tx1/Count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y128.AQ     Tcko                  0.341   UART1/UART_Tx1/Count<5>
+                                                       UART1/UART_Tx1/Count_4
+    SLICE_X53Y127.C1     net (fanout=8)        0.662   UART1/UART_Tx1/Count<4>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X53Y127.D4     net (fanout=4)        0.302   UART1/UART_Tx1/n0000
+    SLICE_X53Y127.D      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/_n0110_inv1
+    SLICE_X53Y128.CE     net (fanout=2)        0.224   UART1/UART_Tx1/_n0110_inv
+    SLICE_X53Y128.CLK    Tceck                 0.150   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.873ns (0.685ns logic, 1.188ns route)
+                                                       (36.6% logic, 63.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.124ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_0 (FF)
+  Destination:          UART1/UART_Tx1/Count_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.841ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_0 to UART1/UART_Tx1/Count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y128.AQ     Tcko                  0.341   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_0
+    SLICE_X53Y127.C2     net (fanout=8)        0.630   UART1/UART_Tx1/Count<0>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X53Y127.D4     net (fanout=4)        0.302   UART1/UART_Tx1/n0000
+    SLICE_X53Y127.D      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/_n0110_inv1
+    SLICE_X53Y128.CE     net (fanout=2)        0.224   UART1/UART_Tx1/_n0110_inv
+    SLICE_X53Y128.CLK    Tceck                 0.150   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.841ns (0.685ns logic, 1.156ns route)
+                                                       (37.2% logic, 62.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.236ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               UART1/UART_Tx1/Count_2 (FF)
+  Destination:          UART1/UART_Tx1/Count_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.729ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: UART1/UART_Tx1/Count_2 to UART1/UART_Tx1/Count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y128.CQ     Tcko                  0.341   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_2
+    SLICE_X53Y127.C3     net (fanout=8)        0.518   UART1/UART_Tx1/Count<2>
+    SLICE_X53Y127.C      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/out1
+    SLICE_X53Y127.D4     net (fanout=4)        0.302   UART1/UART_Tx1/n0000
+    SLICE_X53Y127.D      Tilo                  0.097   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/_n0110_inv1
+    SLICE_X53Y128.CE     net (fanout=2)        0.224   UART1/UART_Tx1/_n0110_inv
+    SLICE_X53Y128.CLK    Tceck                 0.150   UART1/UART_Tx1/Count<3>
+                                                       UART1/UART_Tx1/Count_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.729ns (0.685ns logic, 1.044ns route)
+                                                       (39.6% logic, 60.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_100M = PERIOD TIMEGRP "CLK_100M" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point UART1/UART_Tx1/BitCount_1 (SLICE_X53Y127.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.079ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UART1/UART_Tx1/tSend (FF)
+  Destination:          UART1/UART_Tx1/BitCount_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.338ns (Levels of Logic = 1)
+  Clock Path Skew:      0.259ns (0.759 - 0.500)
+  Source Clock:         Clk_BUFGP rising at 10.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UART1/UART_Tx1/tSend to UART1/UART_Tx1/BitCount_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y127.AQ     Tcko                  0.141   UART1/UART_Tx1/tSend
+                                                       UART1/UART_Tx1/tSend
+    SLICE_X53Y127.A5     net (fanout=8)        0.256   UART1/UART_Tx1/tSend
+    SLICE_X53Y127.CLK    Tah         (-Th)     0.059   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/BitCount_1_dpot
+                                                       UART1/UART_Tx1/BitCount_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.338ns (0.082ns logic, 0.256ns route)
+                                                       (24.3% logic, 75.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UART1/UART_Tx1/Tx (SLICE_X54Y127.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.081ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UART1/UART_Tx1/tSend (FF)
+  Destination:          UART1/UART_Tx1/Tx (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.340ns (Levels of Logic = 1)
+  Clock Path Skew:      0.259ns (0.759 - 0.500)
+  Source Clock:         Clk_BUFGP rising at 10.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UART1/UART_Tx1/tSend to UART1/UART_Tx1/Tx
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y127.AQ     Tcko                  0.141   UART1/UART_Tx1/tSend
+                                                       UART1/UART_Tx1/tSend
+    SLICE_X54Y127.A6     net (fanout=8)        0.274   UART1/UART_Tx1/tSend
+    SLICE_X54Y127.CLK    Tah         (-Th)     0.075   UART1/UART_Tx1/Tx
+                                                       UART1/UART_Tx1/Tx_rstpot
+                                                       UART1/UART_Tx1/Tx
+    -------------------------------------------------  ---------------------------
+    Total                                      0.340ns (0.066ns logic, 0.274ns route)
+                                                       (19.4% logic, 80.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point UART1/UART_Tx1/BitCount_0 (SLICE_X53Y127.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.092ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               UART1/UART_Tx1/tSend (FF)
+  Destination:          UART1/UART_Tx1/BitCount_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.351ns (Levels of Logic = 1)
+  Clock Path Skew:      0.259ns (0.759 - 0.500)
+  Source Clock:         Clk_BUFGP rising at 10.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: UART1/UART_Tx1/tSend to UART1/UART_Tx1/BitCount_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y127.AQ     Tcko                  0.141   UART1/UART_Tx1/tSend
+                                                       UART1/UART_Tx1/tSend
+    SLICE_X53Y127.A5     net (fanout=8)        0.256   UART1/UART_Tx1/tSend
+    SLICE_X53Y127.CLK    Tah         (-Th)     0.046   UART1/UART_Tx1/BitCount<2>
+                                                       UART1/UART_Tx1/BitCount_0_dpot
+                                                       UART1/UART_Tx1/BitCount_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.351ns (0.095ns logic, 0.256ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_100M = PERIOD TIMEGRP "CLK_100M" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.408ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.592ns (628.141MHz) (Tbcper_I(Fmax))
+  Physical resource: Clk_BUFGP/BUFG/I0
+  Logical resource: Clk_BUFGP/BUFG/I0
+  Location pin: BUFGCTRL_X0Y31.I0
+  Clock network: Clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: UART1/UART_Tx1/tReset/CLK
+  Logical resource: UART1/UART_Tx1/tReset/CK
+  Location pin: SLICE_X44Y127.CLK
+  Clock network: Clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: UART1/UART_Tx1/tReset/CLK
+  Logical resource: UART1/UART_Tx1/tReset/CK
+  Location pin: SLICE_X44Y127.CLK
+  Clock network: Clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    2.032|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 192 paths, 0 nets, and 115 connections
+
+Design statistics:
+   Minimum period:   2.032ns{1}   (Maximum frequency: 492.126MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed May 13 13:47:22 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 772 MB
+
+
+

@@ -1,0 +1,4 @@
+verilog work "../../Desktop/UART_Tx.v"
+verilog work "../../Desktop/UART_Rx.v"
+verilog work "../../Desktop/UART.v"
+verilog work "Vadar.v"

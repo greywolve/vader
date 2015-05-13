@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed May 13 13:46:49 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "Reset" LOCATE = SITE "E16" LEVEL 1;
+COMP "Rx" LOCATE = SITE "C4" LEVEL 1;
+COMP "Tx" LOCATE = SITE "D4" LEVEL 1;
+COMP "Clk" LOCATE = SITE "E3" LEVEL 1;
+TIMEGRP CLK_100M = BEL "UART1/UART_Tx1/Count_5" BEL "UART1/UART_Tx1/Count_4"
+        BEL "UART1/UART_Tx1/Count_3" BEL "UART1/UART_Tx1/Count_2" BEL
+        "UART1/UART_Tx1/Count_1" BEL "UART1/UART_Tx1/Count_0" BEL
+        "UART1/UART_Tx1/State_FSM_FFd1" BEL "UART1/UART_Tx1/BitCount_2" BEL
+        "UART1/UART_Tx1/BitCount_1" BEL "UART1/UART_Tx1/BitCount_0" BEL
+        "UART1/UART_Tx1/State_FSM_FFd2" BEL "UART1/UART_Tx1/tSend" BEL
+        "UART1/UART_Tx1/tReset" BEL "Tx_Send" BEL "UART1/UART_Tx1/Busy" BEL
+        "UART1/UART_Tx1/Tx" BEL "UART1/UART_Tx1/Temp_0" BEL "Clk_BUFGP/BUFG";
+TS_CLK_100M = PERIOD TIMEGRP "CLK_100M" 10 ns HIGH 50%;
+PIN Tx_OBUF_pins<1> = BEL "Tx_OBUF" PINNAME OUT;
+PIN Reset_pins<0> = BEL "Reset" PINNAME PAD;
+PIN Rx_pins<0> = BEL "Rx" PINNAME PAD;
+PIN "Tx_OBUF_pins<1>" TIG;
+PIN "Reset_pins<0>" TIG;
+PIN "Rx_pins<0>" TIG;
+SCHEMATIC END;
+

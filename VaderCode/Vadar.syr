@@ -108,13 +108,17 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/bluelabuser/Desktop/UART_Tx.v" into library work
+Analyzing Verilog file "/home/bluelabuser/Downloads/VaderCode/UART_Tx.v" into library work
 Parsing module <UART_Tx>.
-Analyzing Verilog file "/home/bluelabuser/Desktop/UART_Rx.v" into library work
+Analyzing Verilog file "/home/bluelabuser/Downloads/VaderCode/UART_Rx.v" into library work
 Parsing module <UART_Rx>.
-Analyzing Verilog file "/home/bluelabuser/Desktop/UART.v" into library work
+Analyzing Verilog file "/home/bluelabuser/Downloads/VaderCode/BCD_Decoder.v" into library work
+Parsing module <BCD_Decoder>.
+Analyzing Verilog file "/home/bluelabuser/Downloads/VaderCode/UART.v" into library work
 Parsing module <UART>.
-Analyzing Verilog file "/home/bluelabuser/Documents/Vadar/Vadar.v" into library work
+Analyzing Verilog file "/home/bluelabuser/Downloads/VaderCode/SS_Driver.v" into library work
+Parsing module <SS_Driver>.
+Analyzing Verilog file "/home/bluelabuser/Downloads/VaderCode/Vadar.v" into library work
 Parsing module <Vadar>.
 
 =========================================================================
@@ -123,47 +127,71 @@ Parsing module <Vadar>.
 
 Elaborating module <Vadar>.
 
+Elaborating module <SS_Driver>.
+
+Elaborating module <BCD_Decoder>.
+
 Elaborating module <UART>.
 
-Elaborating module <UART_Rx(N=6,Full=6'b100000)>.
+Elaborating module <UART_Rx(N=14,Full=14'b10100010110000)>.
 
-Elaborating module <UART_Tx(N=6,Full=6'b100000)>.
-WARNING:HDLCompiler:189 - "/home/bluelabuser/Documents/Vadar/Vadar.v" Line 17: Size mismatch in connection of port <Rx_Data>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "/home/bluelabuser/Documents/Vadar/Vadar.v" Line 17: Assignment to Rx_Data ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/bluelabuser/Documents/Vadar/Vadar.v" Line 18: Assignment to Rx_Ready ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "/home/bluelabuser/Documents/Vadar/Vadar.v" Line 20: Size mismatch in connection of port <Tx_Data>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:413 - "/home/bluelabuser/Documents/Vadar/Vadar.v" Line 35: Result of 7-bit expression is truncated to fit in 1-bit target.
+Elaborating module <UART_Tx(N=14,Full=14'b10100010110000)>.
+WARNING:HDLCompiler:634 - "/home/bluelabuser/Downloads/VaderCode/Vadar.v" Line 12: Net <Third_Char[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/bluelabuser/Downloads/VaderCode/Vadar.v" Line 13: Net <Fourth_Char[3]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <Vadar>.
-    Related source file is "/home/bluelabuser/Documents/Vadar/Vadar.v".
-INFO:Xst:3210 - "/home/bluelabuser/Documents/Vadar/Vadar.v" line 15: Output port <Rx_Data> of the instance <UART1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/bluelabuser/Documents/Vadar/Vadar.v" line 15: Output port <Rx_Ready> of the instance <UART1> is unconnected or connected to loadless signal.
+    Related source file is "/home/bluelabuser/Downloads/VaderCode/Vadar.v".
+WARNING:Xst:653 - Signal <Third_Char> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <Fourth_Char> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 8-bit register for signal <Tx_Data>.
     Found 1-bit register for signal <Tx_Send>.
+    Found 4-bit register for signal <First_Char>.
+    Found 4-bit register for signal <Second_Char>.
+    Found 1-bit register for signal <Rx_Ack>.
     Summary:
-	inferred   1 D-type flip-flop(s).
+	inferred  18 D-type flip-flop(s).
 Unit <Vadar> synthesized.
 
+Synthesizing Unit <SS_Driver>.
+    Related source file is "/home/bluelabuser/Downloads/VaderCode/SS_Driver.v".
+    Found 4-bit register for signal <SegmentDrivers>.
+    Found 17-bit register for signal <Count>.
+    Found 17-bit adder for signal <Count[16]_GND_2_o_add_1_OUT> created at line 22.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <SS_Driver> synthesized.
+
+Synthesizing Unit <BCD_Decoder>.
+    Related source file is "/home/bluelabuser/Downloads/VaderCode/BCD_Decoder.v".
+    Found 16x7-bit Read Only RAM for signal <SevenSegment>
+    Summary:
+	inferred   1 RAM(s).
+Unit <BCD_Decoder> synthesized.
+
 Synthesizing Unit <UART>.
-    Related source file is "/home/bluelabuser/Desktop/UART.v".
-        N = 6
-        Full = 6'b100000
+    Related source file is "/home/bluelabuser/Downloads/VaderCode/UART.v".
+        N = 14
+        Full = 14'b10100010110000
     Summary:
 	no macro.
 Unit <UART> synthesized.
 
 Synthesizing Unit <UART_Rx>.
-    Related source file is "/home/bluelabuser/Desktop/UART_Rx.v".
-        N = 6
-        Full = 6'b100000
+    Related source file is "/home/bluelabuser/Downloads/VaderCode/UART_Rx.v".
+        N = 14
+        Full = 14'b10100010110000
+    Found 1-bit register for signal <tAck>.
     Found 1-bit register for signal <tReset>.
     Found 8-bit register for signal <Data>.
     Found 1-bit register for signal <Ready>.
     Found 1-bit register for signal <NewData>.
-    Found 6-bit register for signal <Count>.
+    Found 14-bit register for signal <Count>.
     Found 2-bit register for signal <State>.
     Found 3-bit register for signal <BitCount>.
     Found 8-bit register for signal <Temp>.
@@ -181,24 +209,23 @@ Synthesizing Unit <UART_Rx>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 6-bit subtractor for signal <Count[5]_GND_3_o_sub_26_OUT> created at line 122.
-    Found 3-bit adder for signal <BitCount[2]_GND_3_o_add_17_OUT> created at line 115.
-    WARNING:Xst:2404 -  FFs/Latches <tAck<0:0>> (without init value) have a constant value of 0 in block <UART_Rx>.
+    Found 14-bit subtractor for signal <Count[13]_GND_5_o_sub_26_OUT> created at line 122.
+    Found 3-bit adder for signal <BitCount[2]_GND_5_o_add_17_OUT> created at line 115.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  29 D-type flip-flop(s).
+	inferred  38 D-type flip-flop(s).
 	inferred   5 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <UART_Rx> synthesized.
 
 Synthesizing Unit <UART_Tx>.
-    Related source file is "/home/bluelabuser/Desktop/UART_Tx.v".
-        N = 6
-        Full = 6'b100000
+    Related source file is "/home/bluelabuser/Downloads/VaderCode/UART_Tx.v".
+        N = 14
+        Full = 14'b10100010110000
     Found 1-bit register for signal <Busy>.
     Found 1-bit register for signal <Tx>.
     Found 1-bit register for signal <tSend>.
-    Found 6-bit register for signal <Count>.
+    Found 14-bit register for signal <Count>.
     Found 3-bit register for signal <BitCount>.
     Found 2-bit register for signal <State>.
     Found 8-bit register for signal <Temp>.
@@ -216,11 +243,11 @@ Synthesizing Unit <UART_Tx>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit subtractor for signal <BitCount[2]_GND_4_o_sub_9_OUT> created at line 85.
-    Found 6-bit subtractor for signal <Count[5]_GND_4_o_sub_17_OUT> created at line 107.
+    Found 3-bit subtractor for signal <BitCount[2]_GND_6_o_sub_9_OUT> created at line 85.
+    Found 14-bit subtractor for signal <Count[13]_GND_6_o_sub_17_OUT> created at line 107.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  21 D-type flip-flop(s).
+	inferred  29 D-type flip-flop(s).
 	inferred   5 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <UART_Tx> synthesized.
@@ -229,20 +256,25 @@ Unit <UART_Tx> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 4
+# RAMs                                                 : 4
+ 16x7-bit single-port Read Only RAM                    : 4
+# Adders/Subtractors                                   : 5
+ 14-bit subtractor                                     : 2
+ 17-bit adder                                          : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
- 6-bit subtractor                                      : 2
-# Registers                                            : 16
- 1-bit register                                        : 9
+# Registers                                            : 23
+ 1-bit register                                        : 11
+ 14-bit register                                       : 2
+ 17-bit register                                       : 1
  3-bit register                                        : 2
- 6-bit register                                        : 2
- 8-bit register                                        : 3
-# Multiplexers                                         : 10
+ 4-bit register                                        : 3
+ 8-bit register                                        : 4
+# Multiplexers                                         : 11
  1-bit 2-to-1 multiplexer                              : 2
+ 14-bit 2-to-1 multiplexer                             : 5
  3-bit 2-to-1 multiplexer                              : 2
- 6-bit 2-to-1 multiplexer                              : 5
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 2
 
 =========================================================================
@@ -251,8 +283,24 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <UART_Rx1> is unconnected in block <UART1>.
-   It will be removed from the design.
+
+Synthesizing (advanced) Unit <BCD_Decoder>.
+INFO:Xst:3231 - The small RAM <Mram_SevenSegment> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <BCD>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SevenSegment>  |          |
+    -----------------------------------------------------------------------
+Unit <BCD_Decoder> synthesized (advanced).
+
+Synthesizing (advanced) Unit <SS_Driver>.
+The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
+Unit <SS_Driver> synthesized (advanced).
 
 Synthesizing (advanced) Unit <UART_Rx>.
 The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
@@ -267,18 +315,21 @@ Unit <UART_Tx> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 4
+ 16x7-bit single-port distributed Read Only RAM        : 4
 # Adders/Subtractors                                   : 1
  3-bit adder                                           : 1
-# Counters                                             : 3
+# Counters                                             : 4
+ 14-bit down counter                                   : 2
+ 17-bit up counter                                     : 1
  3-bit down counter                                    : 1
- 6-bit down counter                                    : 2
-# Registers                                            : 36
- Flip-Flops                                            : 36
-# Multiplexers                                         : 7
+# Registers                                            : 58
+ Flip-Flops                                            : 58
+# Multiplexers                                         : 8
  1-bit 2-to-1 multiplexer                              : 2
+ 14-bit 2-to-1 multiplexer                             : 3
  3-bit 2-to-1 multiplexer                              : 1
- 6-bit 2-to-1 multiplexer                              : 3
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 2
 
 =========================================================================
@@ -286,7 +337,8 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2973 - All outputs of instance <UART1/UART_Rx1> of block <UART_Rx> are unconnected in block <Vadar>. Underlying logic will be removed.
+WARNING:Xst:1989 - Unit <SS_Driver>: instances <BCD_Decoder2>, <BCD_Decoder3> of unit <BCD_Decoder> are equivalent, second instance is removed
+INFO:Xst:2261 - The FF/Latch <Rx_Ack> in Unit <Vadar> is equivalent to the following FF/Latch, which will be removed : <Tx_Send> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <UART1/UART_Tx1/FSM_1> on signal <State[1:2]> with user encoding.
 -------------------
@@ -298,7 +350,7 @@ Optimizing FSM <UART1/UART_Tx1/FSM_1> on signal <State[1:2]> with user encoding.
  10    | 10
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <State[1:2]> with gray encoding.
+Optimizing FSM <UART1/UART_Rx1/FSM_0> on signal <State[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -307,19 +359,16 @@ Optimizing FSM <FSM_0> on signal <State[1:2]> with gray encoding.
  01    | 11
  11    | 10
 -------------------
-WARNING:Xst:1710 - FF/Latch <Temp_1> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Temp_2> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Temp_3> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Temp_4> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Temp_5> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Temp_6> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Temp_7> (without init value) has a constant value of 0 in block <UART_Tx>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <Vadar> ...
+
+Optimizing unit <SS_Driver> ...
 
 Optimizing unit <UART_Tx> ...
 
 Optimizing unit <UART_Rx> ...
+INFO:Xst:2261 - The FF/Latch <UART1/UART_Tx1/tSend> in Unit <Vadar> is equivalent to the following FF/Latch, which will be removed : <UART1/UART_Rx1/tAck> 
+INFO:Xst:2261 - The FF/Latch <UART1/UART_Tx1/tReset> in Unit <Vadar> is equivalent to the following FF/Latch, which will be removed : <UART1/UART_Rx1/tReset> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -331,8 +380,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 17
- Flip-Flops                                            : 17
+# Registers                                            : 107
+ Flip-Flops                                            : 107
 
 =========================================================================
 
@@ -355,21 +404,30 @@ Top Level Output File Name         : Vadar.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 19
-#      LUT2                        : 2
-#      LUT4                        : 3
-#      LUT5                        : 2
-#      LUT6                        : 12
-# FlipFlops/Latches                : 17
-#      FD                          : 3
-#      FDR                         : 4
-#      FDRE                        : 9
+# BELS                             : 243
+#      GND                         : 1
+#      INV                         : 27
+#      LUT1                        : 18
+#      LUT2                        : 5
+#      LUT3                        : 23
+#      LUT4                        : 21
+#      LUT5                        : 35
+#      LUT6                        : 25
+#      MUXCY                       : 42
+#      VCC                         : 1
+#      XORCY                       : 45
+# FlipFlops/Latches                : 107
+#      FD                          : 29
+#      FDE                         : 27
+#      FDR                         : 22
+#      FDRE                        : 25
 #      FDS                         : 1
+#      FDSE                        : 3
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 2
-#      IBUF                        : 1
-#      OBUF                        : 1
+# IO Buffers                       : 15
+#      IBUF                        : 2
+#      OBUF                        : 13
 
 Device utilization summary:
 ---------------------------
@@ -378,20 +436,20 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              17  out of  126800     0%  
- Number of Slice LUTs:                   19  out of  63400     0%  
-    Number used as Logic:                19  out of  63400     0%  
+ Number of Slice Registers:             107  out of  126800     0%  
+ Number of Slice LUTs:                  154  out of  63400     0%  
+    Number used as Logic:               154  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     21
-   Number with an unused Flip Flop:       4  out of     21    19%  
-   Number with an unused LUT:             2  out of     21     9%  
-   Number of fully used LUT-FF pairs:    15  out of     21    71%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:    184
+   Number with an unused Flip Flop:      77  out of    184    41%  
+   Number with an unused LUT:            30  out of    184    16%  
+   Number of fully used LUT-FF pairs:    77  out of    184    41%  
+   Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                           4
- Number of bonded IOBs:                   3  out of    210     1%  
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    210     7%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -417,7 +475,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk                                | BUFGP                  | 17    |
+Clk                                | BUFGP                  | 107   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -428,10 +486,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.987ns (Maximum Frequency: 503.221MHz)
-   Minimum input arrival time before clock: 0.405ns
-   Maximum output required time after clock: 0.645ns
-   Maximum combinational path delay: No path found
+   Minimum period: 2.601ns (Maximum Frequency: 384.394MHz)
+   Minimum input arrival time before clock: 1.159ns
+   Maximum output required time after clock: 2.243ns
+   Maximum combinational path delay: 1.404ns
 
 Timing Details:
 ---------------
@@ -439,65 +497,91 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk'
-  Clock period: 1.987ns (frequency: 503.221MHz)
-  Total number of paths / destination ports: 192 / 39
+  Clock period: 2.601ns (frequency: 384.394MHz)
+  Total number of paths / destination ports: 1914 / 199
 -------------------------------------------------------------------------
-Delay:               1.987ns (Levels of Logic = 2)
-  Source:            UART1/UART_Tx1/Count_1 (FF)
-  Destination:       UART1/UART_Tx1/Count_5 (FF)
+Delay:               2.601ns (Levels of Logic = 4)
+  Source:            UART1/UART_Tx1/Count_13 (FF)
+  Destination:       UART1/UART_Tx1/Count_12 (FF)
   Source Clock:      Clk rising
   Destination Clock: Clk rising
 
-  Data Path: UART1/UART_Tx1/Count_1 to UART1/UART_Tx1/Count_5
+  Data Path: UART1/UART_Tx1/Count_13 to UART1/UART_Tx1/Count_12
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             8   0.361   0.725  UART1/UART_Tx1/Count_1 (UART1/UART_Tx1/Count_1)
-     LUT6:I0->O            4   0.097   0.309  UART1/UART_Tx1/out1 (UART1/UART_Tx1/n0000)
-     LUT4:I3->O            6   0.097   0.302  UART1/UART_Tx1/_n0110_inv1 (UART1/UART_Tx1/_n0110_inv)
-     FDRE:CE                   0.095          UART1/UART_Tx1/Count_0
+     FDRE:C->Q             2   0.361   0.697  UART1/UART_Tx1/Count_13 (UART1/UART_Tx1/Count_13)
+     LUT6:I0->O            7   0.097   0.407  UART1/UART_Tx1/out2 (UART1/UART_Tx1/out1)
+     LUT4:I2->O            7   0.097   0.323  UART1/UART_Tx1/out3 (UART1/UART_Tx1/n0000)
+     LUT5:I4->O            9   0.097   0.416  UART1/UART_Tx1/Reset_OR_DriverANDClockEnable1 (UART1/UART_Tx1/Reset_OR_DriverANDClockEnable)
+     LUT4:I2->O            1   0.097   0.000  UART1/UART_Tx1/Count_12_rstpot (UART1/UART_Tx1/Count_12_rstpot)
+     FD:D                      0.008          UART1/UART_Tx1/Count_12
     ----------------------------------------
-    Total                      1.987ns (0.650ns logic, 1.337ns route)
-                                       (32.7% logic, 67.3% route)
+    Total                      2.601ns (0.757ns logic, 1.844ns route)
+                                       (29.1% logic, 70.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 41 / 41
 -------------------------------------------------------------------------
-Offset:              0.405ns (Levels of Logic = 2)
-  Source:            Reset (PAD)
-  Destination:       Tx_Send (FF)
+Offset:              1.159ns (Levels of Logic = 3)
+  Source:            Rx (PAD)
+  Destination:       UART1/UART_Rx1/Count_12 (FF)
   Destination Clock: Clk rising
 
-  Data Path: Reset to Tx_Send
+  Data Path: Rx to UART1/UART_Rx1/Count_12
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.001   0.299  Reset_IBUF (Reset_IBUF)
-     LUT2:I1->O            1   0.097   0.000  Tx_Send_rstpot (Tx_Send_rstpot)
-     FD:D                      0.008          Tx_Send
+     IBUF:I->O             7   0.001   0.407  Rx_IBUF (Rx_IBUF)
+     LUT3:I1->O            9   0.097   0.548  UART1/UART_Rx1/State[1]_GND_5_o_select_22_OUT<0>11 (UART1/UART_Rx1/State[1]_GND_5_o_select_22_OUT<0>1)
+     LUT5:I2->O            1   0.097   0.000  UART1/UART_Rx1/Mcount_Count_eqn_91 (UART1/UART_Rx1/Mcount_Count_eqn_9)
+     FDR:D                     0.008          UART1/UART_Rx1/Count_9
     ----------------------------------------
-    Total                      0.405ns (0.106ns logic, 0.299ns route)
-                                       (26.1% logic, 73.9% route)
+    Total                      1.159ns (0.203ns logic, 0.956ns route)
+                                       (17.5% logic, 82.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 126 / 12
 -------------------------------------------------------------------------
-Offset:              0.645ns (Levels of Logic = 1)
-  Source:            UART1/UART_Tx1/Tx (FF)
-  Destination:       Tx (PAD)
+Offset:              2.243ns (Levels of Logic = 4)
+  Source:            Second_Char_3 (FF)
+  Destination:       SS_Segments<5> (PAD)
   Source Clock:      Clk rising
 
-  Data Path: UART1/UART_Tx1/Tx to Tx
+  Data Path: Second_Char_3 to SS_Segments<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS:C->Q              2   0.361   0.283  UART1/UART_Tx1/Tx (UART1/UART_Tx1/Tx)
-     OBUF:I->O                 0.000          Tx_OBUF (Tx)
+     FDE:C->Q              7   0.361   0.721  Second_Char_3 (Second_Char_3)
+     LUT6:I0->O            1   0.097   0.295  SS_Driver1/Mmux_SevenSegment61 (SS_Driver1/Mmux_SevenSegment6)
+     LUT6:I5->O            1   0.097   0.295  SS_Driver1/Mmux_SevenSegment62 (SS_Driver1/Mmux_SevenSegment61)
+     LUT3:I2->O            1   0.097   0.279  SS_Driver1/Mmux_SevenSegment64 (SS_Segments_5_OBUF)
+     OBUF:I->O                 0.000          SS_Segments_5_OBUF (SS_Segments<5>)
     ----------------------------------------
-    Total                      0.645ns (0.361ns logic, 0.283ns route)
-                                       (56.0% logic, 44.0% route)
+    Total                      2.243ns (0.652ns logic, 1.591ns route)
+                                       (29.1% logic, 70.9% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Delay:               1.404ns (Levels of Logic = 4)
+  Source:            Reset (PAD)
+  Destination:       SS_Segments<5> (PAD)
+
+  Data Path: Reset to SS_Segments<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.001   0.635  Reset_IBUF (Reset_IBUF)
+     LUT6:I2->O            1   0.097   0.295  SS_Driver1/Mmux_SevenSegment62 (SS_Driver1/Mmux_SevenSegment61)
+     LUT3:I2->O            1   0.097   0.279  SS_Driver1/Mmux_SevenSegment64 (SS_Segments_5_OBUF)
+     OBUF:I->O                 0.000          SS_Segments_5_OBUF (SS_Segments<5>)
+    ----------------------------------------
+    Total                      1.404ns (0.195ns logic, 1.209ns route)
+                                       (13.9% logic, 86.1% route)
 
 =========================================================================
 
@@ -509,21 +593,21 @@ Clock to Setup on destination clock Clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk            |    1.987|         |         |         |
+Clk            |    2.601|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.19 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.53 secs
  
 --> 
 
 
-Total memory usage is 505296 kilobytes
+Total memory usage is 505668 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   15 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

@@ -103,7 +103,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1431517576" xil_pn:in_ck="1229421014341115107" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2729059117418152600" xil_pn:start_ts="1431517567">
+    <transform xil_pn:end_ts="1431591995" xil_pn:in_ck="1336184193542756093" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2729059117418152600" xil_pn:start_ts="1431591986">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -121,11 +121,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1431517576" xil_pn:in_ck="125218210046394" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4066557905358330672" xil_pn:start_ts="1431517576">
+    <transform xil_pn:end_ts="1431591226" xil_pn:in_ck="125218210046394" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4066557905358330672" xil_pn:start_ts="1431591226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1431517582" xil_pn:in_ck="-7036580617099548498" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="6758547812078461084" xil_pn:start_ts="1431517576">
+    <transform xil_pn:end_ts="1431592002" xil_pn:in_ck="-7036580617099548498" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="6758547812078461084" xil_pn:start_ts="1431591995">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Vadar.bld"/>
@@ -134,7 +134,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1431517610" xil_pn:in_ck="-7036534205615146545" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1431517582">
+    <transform xil_pn:end_ts="1431592029" xil_pn:in_ck="-7036534205615146545" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1431592002">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Vadar.pcf"/>
@@ -147,9 +147,8 @@
       <outfile xil_pn:name="Vadar_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1431517642" xil_pn:in_ck="1896929806468457992" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1431517610">
+    <transform xil_pn:end_ts="1431592062" xil_pn:in_ck="1896929806468457992" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1431592029">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Vadar.ncd"/>
       <outfile xil_pn:name="Vadar.pad"/>
@@ -162,9 +161,8 @@
       <outfile xil_pn:name="Vadar_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1431517669" xil_pn:in_ck="125218210038769" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1431517642">
+    <transform xil_pn:end_ts="1431592088" xil_pn:in_ck="125218210038769" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1431592062">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Vadar.bgn"/>
       <outfile xil_pn:name="Vadar.bit"/>
@@ -175,11 +173,13 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1431517694" xil_pn:in_ck="125218210025915" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="-6383737364629502382" xil_pn:start_ts="1431517693">
+    <transform xil_pn:end_ts="1431589316" xil_pn:in_ck="125218210025915" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="-6383737364629502382" xil_pn:start_ts="1431589314">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1431517642" xil_pn:in_ck="-7042660521556204341" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1431517630">
+    <transform xil_pn:end_ts="1431592062" xil_pn:in_ck="-7042660521556204341" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1431592049">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Vadar.twr"/>

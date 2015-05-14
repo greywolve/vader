@@ -1,24 +1,102 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed May 13 13:46:49 2015
+// Written by: Map P.20131013 on Thu May 14 10:27:08 2015
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "SS_Segments<0>" LOCATE = SITE "L3" LEVEL 1;
+COMP "SS_Segments<1>" LOCATE = SITE "N1" LEVEL 1;
+COMP "SS_Segments<2>" LOCATE = SITE "L5" LEVEL 1;
+COMP "SS_Segments<3>" LOCATE = SITE "L4" LEVEL 1;
+COMP "SS_Segments<4>" LOCATE = SITE "K3" LEVEL 1;
+COMP "SS_Segments<5>" LOCATE = SITE "M2" LEVEL 1;
+COMP "SS_Segments<6>" LOCATE = SITE "L6" LEVEL 1;
+COMP "SS_Segments<7>" LOCATE = SITE "M4" LEVEL 1;
 COMP "Reset" LOCATE = SITE "E16" LEVEL 1;
+COMP "SS_Drivers<0>" LOCATE = SITE "N6" LEVEL 1;
 COMP "Rx" LOCATE = SITE "C4" LEVEL 1;
+COMP "SS_Drivers<1>" LOCATE = SITE "M6" LEVEL 1;
 COMP "Tx" LOCATE = SITE "D4" LEVEL 1;
+COMP "SS_Drivers<2>" LOCATE = SITE "M3" LEVEL 1;
 COMP "Clk" LOCATE = SITE "E3" LEVEL 1;
-TIMEGRP CLK_100M = BEL "UART1/UART_Tx1/Count_5" BEL "UART1/UART_Tx1/Count_4"
-        BEL "UART1/UART_Tx1/Count_3" BEL "UART1/UART_Tx1/Count_2" BEL
-        "UART1/UART_Tx1/Count_1" BEL "UART1/UART_Tx1/Count_0" BEL
-        "UART1/UART_Tx1/State_FSM_FFd1" BEL "UART1/UART_Tx1/BitCount_2" BEL
+COMP "SS_Drivers<3>" LOCATE = SITE "N5" LEVEL 1;
+TIMEGRP CLK_100M = BEL "Tx_Data_0" BEL "Tx_Data_1" BEL "Tx_Data_2" BEL
+        "Tx_Data_3" BEL "Tx_Data_4" BEL "Tx_Data_5" BEL "Tx_Data_6" BEL
+        "Tx_Data_7" BEL "Second_Char_0" BEL "Second_Char_1" BEL
+        "Second_Char_2" BEL "Second_Char_3" BEL "First_Char_0" BEL
+        "First_Char_1" BEL "First_Char_2" BEL "First_Char_3" BEL
+        "SS_Driver1/Count_16" BEL "SS_Driver1/Count_15" BEL
+        "SS_Driver1/Count_14" BEL "SS_Driver1/Count_13" BEL
+        "SS_Driver1/Count_12" BEL "SS_Driver1/Count_11" BEL
+        "SS_Driver1/Count_10" BEL "SS_Driver1/Count_9" BEL
+        "SS_Driver1/Count_8" BEL "SS_Driver1/Count_7" BEL "SS_Driver1/Count_6"
+        BEL "SS_Driver1/Count_5" BEL "SS_Driver1/Count_4" BEL
+        "SS_Driver1/Count_3" BEL "SS_Driver1/Count_2" BEL "SS_Driver1/Count_1"
+        BEL "SS_Driver1/Count_0" BEL "SS_Driver1/SegmentDrivers_3" BEL
+        "SS_Driver1/SegmentDrivers_2" BEL "SS_Driver1/SegmentDrivers_1" BEL
+        "SS_Driver1/SegmentDrivers_0" BEL "UART1/UART_Tx1/BitCount_2" BEL
         "UART1/UART_Tx1/BitCount_1" BEL "UART1/UART_Tx1/BitCount_0" BEL
+        "UART1/UART_Tx1/Count_13" BEL "UART1/UART_Tx1/Count_11" BEL
+        "UART1/UART_Tx1/Count_7" BEL "UART1/UART_Tx1/Count_5" BEL
+        "UART1/UART_Tx1/Count_4" BEL "UART1/UART_Tx1/State_FSM_FFd1" BEL
         "UART1/UART_Tx1/State_FSM_FFd2" BEL "UART1/UART_Tx1/tSend" BEL
-        "UART1/UART_Tx1/tReset" BEL "Tx_Send" BEL "UART1/UART_Tx1/Busy" BEL
-        "UART1/UART_Tx1/Tx" BEL "UART1/UART_Tx1/Temp_0" BEL "Clk_BUFGP/BUFG";
+        "UART1/UART_Tx1/Temp_7" BEL "UART1/UART_Tx1/Temp_6" BEL
+        "UART1/UART_Tx1/Temp_5" BEL "UART1/UART_Tx1/Temp_4" BEL
+        "UART1/UART_Tx1/Temp_3" BEL "UART1/UART_Tx1/Temp_2" BEL
+        "UART1/UART_Tx1/Temp_1" BEL "UART1/UART_Tx1/Temp_0" BEL
+        "UART1/UART_Tx1/tReset" BEL "UART1/UART_Rx1/Count_13" BEL
+        "UART1/UART_Rx1/Count_12" BEL "UART1/UART_Rx1/Count_11" BEL
+        "UART1/UART_Rx1/Count_10" BEL "UART1/UART_Rx1/Count_9" BEL
+        "UART1/UART_Rx1/Count_8" BEL "UART1/UART_Rx1/Count_7" BEL
+        "UART1/UART_Rx1/Count_6" BEL "UART1/UART_Rx1/Count_5" BEL
+        "UART1/UART_Rx1/Count_4" BEL "UART1/UART_Rx1/Count_3" BEL
+        "UART1/UART_Rx1/Count_2" BEL "UART1/UART_Rx1/Count_1" BEL
+        "UART1/UART_Rx1/Count_0" BEL "UART1/UART_Rx1/State_FSM_FFd1" BEL
+        "UART1/UART_Rx1/State_FSM_FFd2" BEL "UART1/UART_Rx1/Data_7" BEL
+        "UART1/UART_Rx1/Data_6" BEL "UART1/UART_Rx1/Data_5" BEL
+        "UART1/UART_Rx1/Data_4" BEL "UART1/UART_Rx1/Data_3" BEL
+        "UART1/UART_Rx1/Data_2" BEL "UART1/UART_Rx1/Data_1" BEL
+        "UART1/UART_Rx1/Data_0" BEL "UART1/UART_Rx1/Temp_7" BEL
+        "UART1/UART_Rx1/Temp_6" BEL "UART1/UART_Rx1/Temp_5" BEL
+        "UART1/UART_Rx1/Temp_4" BEL "UART1/UART_Rx1/Temp_3" BEL
+        "UART1/UART_Rx1/Temp_2" BEL "UART1/UART_Rx1/Temp_1" BEL
+        "UART1/UART_Rx1/Temp_0" BEL "UART1/UART_Rx1/BitCount_2" BEL
+        "UART1/UART_Rx1/BitCount_1" BEL "UART1/UART_Rx1/BitCount_0" BEL
+        "UART1/UART_Rx1/tRx" BEL "UART1/UART_Rx1/NewData" BEL
+        "UART1/UART_Rx1/Ready" BEL "UART1/UART_Tx1/Tx" BEL
+        "UART1/UART_Tx1/Busy" BEL "Rx_Ack" BEL "UART1/UART_Tx1/Count_12" BEL
+        "UART1/UART_Tx1/Count_10" BEL "UART1/UART_Tx1/Count_9" BEL
+        "UART1/UART_Tx1/Count_8" BEL "UART1/UART_Tx1/Count_6" BEL
+        "UART1/UART_Tx1/Count_3" BEL "UART1/UART_Tx1/Count_2" BEL
+        "UART1/UART_Tx1/Count_1" BEL "UART1/UART_Tx1/Count_0" BEL
+        "Clk_BUFGP/BUFG";
 TS_CLK_100M = PERIOD TIMEGRP "CLK_100M" 10 ns HIGH 50%;
+PIN SS_Drivers_3_OBUF_pins<1> = BEL "SS_Drivers_3_OBUF" PINNAME OUT;
+PIN SS_Drivers_2_OBUF_pins<1> = BEL "SS_Drivers_2_OBUF" PINNAME OUT;
+PIN SS_Drivers_1_OBUF_pins<1> = BEL "SS_Drivers_1_OBUF" PINNAME OUT;
+PIN SS_Drivers_0_OBUF_pins<1> = BEL "SS_Drivers_0_OBUF" PINNAME OUT;
+PIN SS_Segments_7_OBUF_pins<1> = BEL "SS_Segments_7_OBUF" PINNAME OUT;
+PIN SS_Segments_6_OBUF_pins<1> = BEL "SS_Segments_6_OBUF" PINNAME OUT;
+PIN SS_Segments_5_OBUF_pins<1> = BEL "SS_Segments_5_OBUF" PINNAME OUT;
+PIN SS_Segments_4_OBUF_pins<1> = BEL "SS_Segments_4_OBUF" PINNAME OUT;
+PIN SS_Segments_3_OBUF_pins<1> = BEL "SS_Segments_3_OBUF" PINNAME OUT;
+PIN SS_Segments_2_OBUF_pins<1> = BEL "SS_Segments_2_OBUF" PINNAME OUT;
+PIN SS_Segments_1_OBUF_pins<1> = BEL "SS_Segments_1_OBUF" PINNAME OUT;
+PIN SS_Segments_0_OBUF_pins<1> = BEL "SS_Segments_0_OBUF" PINNAME OUT;
 PIN Tx_OBUF_pins<1> = BEL "Tx_OBUF" PINNAME OUT;
 PIN Reset_pins<0> = BEL "Reset" PINNAME PAD;
 PIN Rx_pins<0> = BEL "Rx" PINNAME PAD;
+PIN "SS_Drivers_3_OBUF_pins<1>" TIG;
+PIN "SS_Drivers_2_OBUF_pins<1>" TIG;
+PIN "SS_Drivers_1_OBUF_pins<1>" TIG;
+PIN "SS_Drivers_0_OBUF_pins<1>" TIG;
+PIN "SS_Segments_7_OBUF_pins<1>" TIG;
+PIN "SS_Segments_6_OBUF_pins<1>" TIG;
+PIN "SS_Segments_5_OBUF_pins<1>" TIG;
+PIN "SS_Segments_4_OBUF_pins<1>" TIG;
+PIN "SS_Segments_3_OBUF_pins<1>" TIG;
+PIN "SS_Segments_2_OBUF_pins<1>" TIG;
+PIN "SS_Segments_1_OBUF_pins<1>" TIG;
+PIN "SS_Segments_0_OBUF_pins<1>" TIG;
 PIN "Tx_OBUF_pins<1>" TIG;
 PIN "Reset_pins<0>" TIG;
 PIN "Rx_pins<0>" TIG;

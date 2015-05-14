@@ -5,7 +5,7 @@ Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
 ise -dd _ngo -nt timestamp -uc Vadar.ucf -p xc7a100t-csg324-3 Vadar.ngc
 Vadar.ngd
 
-Reading NGO file "/home/bluelabuser/Documents/Vadar/Vadar.ngc" ...
+Reading NGO file "/home/bluelabuser/Downloads/VaderCode/Vadar.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,10 +27,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 457168 kilobytes
+Total memory usage is 458060 kilobytes
 
 Writing NGD file "Vadar.ngd" ...
-Total REAL time to NGDBUILD completion:  4 sec
-Total CPU time to NGDBUILD completion:   4 sec
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
 
 Writing NGDBUILD log file "Vadar.bld"...

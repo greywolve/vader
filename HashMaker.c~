@@ -56,7 +56,7 @@ int main()
 	}
 	
 	FILE *file;
-	file = fopen("HashTable.txt", "w+");
+	file = fopen("hashTable.txt", "w+");
 //	fprintf(file, "YOYOYOY\n");
 
 

@@ -19,35 +19,18 @@
 int main()
 {
 	int i, j;
-	int noOfPasswords = 25;
+	int noOfPasswords = 3106;
 	unsigned char hashTable[noOfPasswords][MD5_DIGEST_LENGTH];	// hash table stores hashed passwords; MD5_DIGEST_LENGTH = 16
-	char *passwordTable[] = {
-		"hello world",		// should give 5eb63bbbe01eeed093cb22bb8f5acdc3
-		"password",
-		"12345",
-		"12345678",
-		"qwerty",
-		"123456789",
-		"1234",
-		"baseball",
-		"dragon",
-		"football",
-		"1234567",
-		"monkey",
-		"letmein",
-		"abc123",
-		"111111",
-		"mustang",
-		"access",
-		"shadow",
-		"master",
-		"michael",
-		"superman",
-		"696969",
-		"123123",
-		"batman",
-		"trustno1"
-	};
+	char passwordTable[noOfPasswords][255];
+
+	// read passwords from text file into passwordTable
+	FILE *inputFile;
+	inputFile = fopen("john.txt", "r");
+	for(i = 0; i < noOfPasswords; i++)
+	{
+		fscanf(inputFile, "%s", passwordTable[i]);
+	}
+	fclose(inputFile);
 
 	// perform hashing and store in hashTable
 	for(i = 0; i < noOfPasswords; i++)
@@ -55,13 +38,9 @@ int main()
 		MD5(passwordTable[i], strlen(passwordTable[i]), hashTable[i]);
 	}
 	
-	FILE *file;
-	file = fopen("HashTable.txt", "w+");
-//	fprintf(file, "YOYOYOY\n");
-
-
-	
-	// output
+	// save hashed passwords to text file
+	FILE *outputFile;
+	outputFile = fopen("HashTable.txt", "w+");
 	for(j = 0; j < noOfPasswords; j++)
 	{
 		// NOTE: hashTable[j] is a  sequence of 16 hex  numbers, each having a max value of ff (1 byte)
@@ -70,11 +49,10 @@ int main()
 		
 		// output hash to console
 		for(i = 0; i < MD5_DIGEST_LENGTH; i++)
-			fprintf(file, "%x", hashTable[j][i]);
-		fprintf(file, "\n");
+			fprintf(outputFile, "%x", hashTable[j][i]);
+		fprintf(outputFile, "\n");
 	}
-	
-	fclose(file);
+	fclose(outputFile);
 
 	return 0;
 }

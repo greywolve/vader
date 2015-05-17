@@ -19,8 +19,8 @@
 //==============================================================================
 
 module UART #(
- parameter N    = 14,
- parameter Full = 14'd10416 // Clk / BAUD - 1
+ parameter N    = 7,
+ parameter Full = 7'd107 // Clk / BAUD - 1
 )(
  input Reset,
  input Clk,

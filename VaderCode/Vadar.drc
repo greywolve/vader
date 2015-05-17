@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu May 14 10:27:50 2015
+Fri May 15 16:16:18 2015
 
 drc -z Vadar.ncd Vadar.pcf
 

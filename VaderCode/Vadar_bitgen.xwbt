@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/home/bluelabuser/Downloads/VaderCode/Vadar.ncd
-OUTFILE=/home/bluelabuser/Downloads/VaderCode/Vadar.bit
+INFILE=/home/bluelabuser/Documents/vader/VaderCode/Vadar.ncd
+OUTFILE=/home/bluelabuser/Documents/vader/VaderCode/Vadar.bit
 FAMILY=Artix7
 PART=xc7a100t-3csg324
-WORKINGDIR=/home/bluelabuser/Downloads/VaderCode
+WORKINGDIR=/home/bluelabuser/Documents/vader/VaderCode
 LICENSE=ISE
 USER_INFO=178739136_178739138_210553786_049

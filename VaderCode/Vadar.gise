@@ -103,17 +103,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1431591995" xil_pn:in_ck="1336184193542756093" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2729059117418152600" xil_pn:start_ts="1431591986">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
+    <transform xil_pn:end_ts="1431700106" xil_pn:in_ck="-688817580944820821" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2729059117418152600" xil_pn:start_ts="1431700099">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Vadar.lso"/>
       <outfile xil_pn:name="Vadar.ngc"/>
       <outfile xil_pn:name="Vadar.ngr"/>
       <outfile xil_pn:name="Vadar.prj"/>
-      <outfile xil_pn:name="Vadar.stx"/>
       <outfile xil_pn:name="Vadar.syr"/>
       <outfile xil_pn:name="Vadar.xst"/>
       <outfile xil_pn:name="Vadar_xst.xrpt"/>
@@ -125,18 +121,22 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1431592002" xil_pn:in_ck="-7036580617099548498" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="6758547812078461084" xil_pn:start_ts="1431591995">
+    <transform xil_pn:end_ts="1431699310" xil_pn:in_ck="-7036580617099548498" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="6758547812078461084" xil_pn:start_ts="1431699304">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Vadar.bld"/>
       <outfile xil_pn:name="Vadar.ngd"/>
       <outfile xil_pn:name="Vadar_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1431592029" xil_pn:in_ck="-7036534205615146545" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1431592002">
+    <transform xil_pn:end_ts="1431699337" xil_pn:in_ck="-7036534205615146545" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1431699310">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Vadar.pcf"/>
       <outfile xil_pn:name="Vadar_map.map"/>
       <outfile xil_pn:name="Vadar_map.mrp"/>
@@ -147,9 +147,10 @@
       <outfile xil_pn:name="Vadar_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1431592062" xil_pn:in_ck="1896929806468457992" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1431592029">
+    <transform xil_pn:end_ts="1431699369" xil_pn:in_ck="1896929806468457992" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1431699337">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Vadar.ncd"/>
       <outfile xil_pn:name="Vadar.pad"/>
       <outfile xil_pn:name="Vadar.par"/>
@@ -161,9 +162,10 @@
       <outfile xil_pn:name="Vadar_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1431592088" xil_pn:in_ck="125218210038769" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1431592062">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1431699396" xil_pn:in_ck="125218210038769" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1431699369">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Vadar.bgn"/>
       <outfile xil_pn:name="Vadar.bit"/>
       <outfile xil_pn:name="Vadar.drc"/>
@@ -177,11 +179,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1431592062" xil_pn:in_ck="-7042660521556204341" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1431592049">
+    <transform xil_pn:end_ts="1431699369" xil_pn:in_ck="-7042660521556204341" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1431699357">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Vadar.twr"/>
       <outfile xil_pn:name="Vadar.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

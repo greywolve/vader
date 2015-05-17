@@ -35,6 +35,12 @@ wire [7:0]Rx_Data;
 reg  Tx_Send;
 wire Tx_Busy;
 
+//Operation variables.
+reg Result;
+reg [127:0]Hash_value;
+reg [3:0] Byte_Count = 0;
+
+
 //Create seven segment driver circuit.
 SS_Driver SS_Driver1(Clk, 
 							Reset,
@@ -47,15 +53,21 @@ SS_Driver SS_Driver1(Clk,
 
 //Create Uart driver circuit.
 UART UART1(Reset,
-						Clk,
-						Rx_Data,
-						Rx_Ready,
-						Rx_Ack,
-						Tx_Data,
-						Tx_Send,
-						Tx_Busy,
-						Rx,
-						Tx);
+			  Clk,
+			  Rx_Data,
+			  Rx_Ready,
+			  Rx_Ack,
+			  Tx_Data,
+			  Tx_Send,
+			  Tx_Busy,
+			  Rx,
+			  Tx);
+			
+//Create the Comparator module used to compare hashed values.
+//Compare_Hash(Clk, 
+//				 Reset,
+//				 Hash_value,
+//				 Result);
 
 //Recieves data and then sends the same data back.
 always @(posedge Clk) begin
@@ -64,14 +76,25 @@ always @(posedge Clk) begin
 		Tx_Data <= 0;
 		Tx_Send <= 0;
 	end else begin
-		if(Rx_Ready & ~Tx_Busy) begin
-			First_Char <= Rx_Data[3:0];
-			Second_Char <= Rx_Data[7:4];
-			Tx_Data <= Rx_Data;
-			Tx_Send <= 1'b1;
-			Rx_Ack <= 1'b1;
-		end else if(~Rx_Ready & Tx_Busy) begin
+	//receive 16 bytes from UART.
+		if(Rx_Ready) begin
+				if (Rx_Data == 8'h2C) begin
+					Byte_Count <= 1'b1;
+				end else begin
+					Hash_value <= {Hash_value[119:0],Rx_Data};
+					First_Char <= Rx_Data[3:0];
+					Second_Char <= Rx_Data[7:4];
+				end
+				Rx_Ack <= 1'b1;
+		end else if (~Rx_Ready) begin
 			Rx_Ack <= 1'b0;
+		end
+	//sending a byte to the computer.
+		if (~Tx_Busy & Byte_Count == 1'b1) begin
+			Byte_Count <= 1'b0;
+			Tx_Data <= Hash_value[7:0];
+			Tx_Send <= 1'b1;
+		end else if (Tx_Busy) begin
 			Tx_Send <= 1'b0;
 		end
 	end

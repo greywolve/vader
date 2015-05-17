@@ -20,7 +20,7 @@ int main()
 {
 	int i, j;
 	int noOfPasswords = 3106;
-	unsigned char hashTable[noOfPasswords][MD5_DIGEST_LENGTH];	// hash table stores hashed passwords; MD5_DIGEST_LENGTH = 16
+	unsigned char hashTable[noOfPasswords][MD5_DIGEST_LENGTH];	// hash table stores hashed passwords;MD5_DIGEST_LENGTH = 16
 	char passwordTable[noOfPasswords][255];
 
 	// read passwords from text file into passwordTable
